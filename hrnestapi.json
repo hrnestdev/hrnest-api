@@ -1317,36 +1317,6 @@
         }
       }
     },
-    "/api/v{version}/Internal/SendEmail": {
-      "post": {
-        "tags": [
-          "Internal"
-        ],
-        "parameters": [
-          {
-            "name": "contactId",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
     "/api/v{version}/Worktime": {
       "get": {
         "tags": [
