@@ -69,7 +69,9 @@
               }
             }
           }
-        }
+        },
+        "description": "to jest test",
+        "operationId": ""
       }
     },
     "/api/v{version}/Company": {
