@@ -10,6 +10,7 @@
         "tags": [
           "Businesstrip"
         ],
+        "summary": "Get business trips",
         "parameters": [
           {
             "name": "version",
@@ -21,6 +22,7 @@
           }
         ],
         "requestBody": {
+          "description": "Request data",
           "content": {
             "application/json": {
               "schema": {
@@ -43,23 +45,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/BusinesstripResultModel"
-                  }
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/BusinesstripResultModel"
-                  }
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -69,9 +55,7 @@
               }
             }
           }
-        },
-        "description": "to jest test",
-        "operationId": ""
+        }
       }
     },
     "/api/v{version}/Company": {
@@ -79,6 +63,7 @@
         "tags": [
           "Company"
         ],
+        "summary": "Return company data",
         "parameters": [
           {
             "name": "version",
@@ -93,17 +78,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/CompanyResultModel"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CompanyResultModel"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CompanyResultModel"
                 }
@@ -116,6 +91,7 @@
         "tags": [
           "Company"
         ],
+        "summary": "Create a company",
         "parameters": [
           {
             "name": "version",
@@ -127,6 +103,7 @@
           }
         ],
         "requestBody": {
+          "description": "Request data",
           "content": {
             "application/json": {
               "schema": {
@@ -152,17 +129,7 @@
           "400": {
             "description": "Bad Request",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -172,17 +139,7 @@
           "409": {
             "description": "Conflict",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -192,17 +149,7 @@
           "default": {
             "description": "Error",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -217,6 +164,7 @@
         "tags": [
           "Company"
         ],
+        "summary": "Get company departments",
         "parameters": [
           {
             "name": "version",
@@ -231,23 +179,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/DepartmentsResultModel"
-                  }
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/DepartmentsResultModel"
-                  }
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -265,6 +197,7 @@
         "tags": [
           "Company"
         ],
+        "summary": "Check if specified day is a working day",
         "parameters": [
           {
             "name": "version",
@@ -276,6 +209,7 @@
           }
         ],
         "requestBody": {
+          "description": "Request data",
           "content": {
             "application/json": {
               "schema": {
@@ -298,17 +232,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "boolean"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "boolean"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "boolean"
                 }
@@ -323,13 +247,16 @@
         "tags": [
           "Employee"
         ],
+        "summary": "Return employee data",
         "parameters": [
           {
             "name": "userId",
             "in": "path",
+            "description": "Employee Id",
             "required": true,
             "schema": {
               "type": "string",
+              "description": "Employee Id",
               "format": "uuid"
             }
           },
@@ -346,17 +273,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/EmployeeResultModel"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/EmployeeResultModel"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/EmployeeResultModel"
                 }
@@ -371,6 +288,7 @@
         "tags": [
           "Employee"
         ],
+        "summary": "Get employees data matching the specified filters",
         "parameters": [
           {
             "name": "version",
@@ -382,6 +300,7 @@
           }
         ],
         "requestBody": {
+          "description": "Filters",
           "content": {
             "application/json": {
               "schema": {
@@ -404,23 +323,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/UserResultModel"
-                  }
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/UserResultModel"
-                  }
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -436,6 +339,7 @@
         "tags": [
           "Employee"
         ],
+        "summary": "Create employee user",
         "parameters": [
           {
             "name": "version",
@@ -447,6 +351,7 @@
           }
         ],
         "requestBody": {
+          "description": "Request containing the Employee data",
           "content": {
             "application/json": {
               "schema": {
@@ -472,17 +377,7 @@
           "400": {
             "description": "Bad Request",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -492,17 +387,7 @@
           "409": {
             "description": "Conflict",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -512,17 +397,7 @@
           "default": {
             "description": "Error",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -535,6 +410,7 @@
         "tags": [
           "Employee"
         ],
+        "summary": "Change employee user",
         "parameters": [
           {
             "name": "version",
@@ -546,6 +422,7 @@
           }
         ],
         "requestBody": {
+          "description": "Request containing the search and the Employee data",
           "content": {
             "application/json": {
               "schema": {
@@ -571,17 +448,7 @@
           "400": {
             "description": "Bad Request",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -591,17 +458,7 @@
           "404": {
             "description": "Not Found",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -611,17 +468,7 @@
           "409": {
             "description": "Conflict",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -631,17 +478,81 @@
           "default": {
             "description": "Error",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
-              },
-              "text/json": {
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Delete employee user",
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request containing the search data",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeSearchModelApiSearchModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeSearchModelApiSearchModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeSearchModelApiSearchModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "202": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -656,6 +567,7 @@
         "tags": [
           "Employee"
         ],
+        "summary": "Get absent employees infos matching the specified filters",
         "parameters": [
           {
             "name": "version",
@@ -667,6 +579,7 @@
           }
         ],
         "requestBody": {
+          "description": "Filters",
           "content": {
             "application/json": {
               "schema": {
@@ -689,132 +602,12 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/AbsencesResultModel"
-                  }
-                }
-              },
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/AbsencesResultModel"
                   }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/AbsencesResultModel"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v{version}/Employee/Delete": {
-      "delete": {
-        "tags": [
-          "Employee"
-        ],
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EmployeeSearchModelApiSearchModel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/EmployeeSearchModelApiSearchModel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/EmployeeSearchModelApiSearchModel"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          },
-          "202": {
-            "description": "Success"
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "Error",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               }
             }
@@ -827,6 +620,7 @@
         "tags": [
           "Employee"
         ],
+        "summary": "Deactivate employee user",
         "parameters": [
           {
             "name": "version",
@@ -838,6 +632,7 @@
           }
         ],
         "requestBody": {
+          "description": "Request containing the search data",
           "content": {
             "application/json": {
               "schema": {
@@ -866,17 +661,7 @@
           "400": {
             "description": "Bad Request",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -886,17 +671,7 @@
           "404": {
             "description": "Not Found",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -906,17 +681,7 @@
           "default": {
             "description": "Error",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -931,6 +696,7 @@
         "tags": [
           "Employee"
         ],
+        "summary": "Activate employee user",
         "parameters": [
           {
             "name": "version",
@@ -942,6 +708,7 @@
           }
         ],
         "requestBody": {
+          "description": "Request containing the search data",
           "content": {
             "application/json": {
               "schema": {
@@ -970,17 +737,7 @@
           "400": {
             "description": "Bad Request",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -990,17 +747,7 @@
           "404": {
             "description": "Not Found",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -1010,17 +757,7 @@
           "default": {
             "description": "Error",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -1035,6 +772,7 @@
         "tags": [
           "Employee"
         ],
+        "summary": "Register start of the realwork",
         "parameters": [
           {
             "name": "version",
@@ -1046,6 +784,7 @@
           }
         ],
         "requestBody": {
+          "description": "Start data",
           "content": {
             "application/json": {
               "schema": {
@@ -1071,17 +810,7 @@
           "400": {
             "description": "Bad Request",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -1091,17 +820,7 @@
           "404": {
             "description": "Not Found",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -1111,17 +830,7 @@
           "409": {
             "description": "Conflict",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -1134,17 +843,7 @@
           "default": {
             "description": "Error",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -1159,6 +858,7 @@
         "tags": [
           "Employee"
         ],
+        "summary": "Register end of the realwork",
         "parameters": [
           {
             "name": "version",
@@ -1170,6 +870,7 @@
           }
         ],
         "requestBody": {
+          "description": "End data",
           "content": {
             "application/json": {
               "schema": {
@@ -1192,40 +893,29 @@
           "200": {
             "description": "Success"
           },
+          "201": {
+            "description": "Created"
+          },
           "400": {
             "description": "Bad Request",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
               }
             }
           },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
           "404": {
             "description": "Not Found",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -1235,17 +925,7 @@
           "409": {
             "description": "Conflict",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -1258,17 +938,7 @@
           "default": {
             "description": "Error",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -1283,6 +953,7 @@
         "tags": [
           "ICal"
         ],
+        "summary": "Export calendar events in the iCal format",
         "parameters": [
           {
             "name": "version",
@@ -1294,6 +965,7 @@
           }
         ],
         "requestBody": {
+          "description": "Filters",
           "content": {
             "application/json": {
               "schema": {
@@ -1324,6 +996,7 @@
         "tags": [
           "Realwork"
         ],
+        "summary": "Get registered worktimes",
         "parameters": [
           {
             "name": "version",
@@ -1335,6 +1008,7 @@
           }
         ],
         "requestBody": {
+          "description": "Request data",
           "content": {
             "application/json": {
               "schema": {
@@ -1357,23 +1031,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/RealworkResultModel"
-                  }
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/RealworkResultModel"
-                  }
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -1391,13 +1049,16 @@
         "tags": [
           "Request"
         ],
+        "summary": "Return request data",
         "parameters": [
           {
             "name": "requestNumber",
             "in": "path",
+            "description": "Request unique number",
             "required": true,
             "schema": {
               "type": "integer",
+              "description": "Request unique number",
               "format": "int32"
             }
           },
@@ -1414,17 +1075,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/RequestResultModel"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RequestResultModel"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RequestResultModel"
                 }
@@ -1439,6 +1090,7 @@
         "tags": [
           "Request"
         ],
+        "summary": "Get active requests",
         "parameters": [
           {
             "name": "version",
@@ -1450,6 +1102,7 @@
           }
         ],
         "requestBody": {
+          "description": "Request data",
           "content": {
             "application/json": {
               "schema": {
@@ -1472,23 +1125,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/RequestsResultModel"
-                  }
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/RequestsResultModel"
-                  }
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -1506,6 +1143,7 @@
         "tags": [
           "Request"
         ],
+        "summary": "Get available request types",
         "parameters": [
           {
             "name": "version",
@@ -1520,23 +1158,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/AvailableTypesResultModel"
-                  }
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/AvailableTypesResultModel"
-                  }
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -1554,6 +1176,7 @@
         "tags": [
           "Timetable"
         ],
+        "summary": "Get active items of timetable of the specified ID",
         "parameters": [
           {
             "name": "version",
@@ -1565,6 +1188,7 @@
           }
         ],
         "requestBody": {
+          "description": "Request data",
           "content": {
             "application/json": {
               "schema": {
@@ -1587,23 +1211,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TimetableItemsResultModel"
-                  }
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TimetableItemsResultModel"
-                  }
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -1621,6 +1229,7 @@
         "tags": [
           "Timetable"
         ],
+        "summary": "Create a timetable",
         "parameters": [
           {
             "name": "version",
@@ -1632,6 +1241,7 @@
           }
         ],
         "requestBody": {
+          "description": "Timetable data",
           "content": {
             "application/json": {
               "schema": {
@@ -1657,17 +1267,7 @@
           "400": {
             "description": "Bad Request",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -1677,17 +1277,7 @@
           "default": {
             "description": "Error",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
                 }
@@ -1705,31 +1295,37 @@
         "properties": {
           "userId": {
             "type": "string",
+            "description": "Get business trips by the employee user ID",
             "format": "uuid",
             "nullable": true
           },
           "departmentId": {
             "type": "integer",
+            "description": "Get business trips by the employee department ID",
             "format": "int32",
             "nullable": true
           },
           "organizationId": {
             "type": "integer",
+            "description": "Get business trips by the employee organization ID",
             "format": "int32",
             "nullable": true
           },
           "dateFrom": {
             "type": "string",
+            "description": "Get business trips that are later or equal to the date; default = Today",
             "format": "date",
             "nullable": true
           },
           "dateTo": {
             "type": "string",
+            "description": "Get business trips that are earlier or equal to the date; default = Today",
             "format": "date",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Business trips filtering data"
       },
       "BusinesstripsFilterModelApiFilterModel": {
         "type": "object",
@@ -1738,43 +1334,52 @@
             "$ref": "#/components/schemas/BusinesstripsFilterModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "API request model to perform simple operation on entities filtered by the filter data"
       },
       "DepartmentResultModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Department ID",
             "format": "int32"
           },
           "name": {
             "type": "string",
+            "description": "Department name",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Employee department data"
       },
       "UserResultModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
+            "description": "User ID",
             "format": "uuid"
           },
           "firstName": {
             "type": "string",
+            "description": "Employee first name",
             "nullable": true
           },
           "lastName": {
             "type": "string",
+            "description": "Employee last name",
             "nullable": true
           },
           "idNumber": {
             "type": "string",
+            "description": "Employee custom ID number",
             "nullable": true
           },
           "departmentId": {
             "type": "integer",
+            "description": "Employee department ID",
             "format": "int32",
             "nullable": true
           },
@@ -1782,44 +1387,53 @@
             "$ref": "#/components/schemas/DepartmentResultModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Employee user data"
       },
       "BusinesstripResultModel": {
         "type": "object",
         "properties": {
           "number": {
             "type": "string",
+            "description": "Business trip number",
             "nullable": true,
             "readOnly": true
           },
           "userId": {
             "type": "string",
+            "description": "Employee user ID",
             "format": "uuid"
           },
           "date": {
             "type": "string",
+            "description": "Business trip date",
             "format": "date"
           },
           "dateFrom": {
             "type": "string",
+            "description": "Business trip beginning date",
             "format": "date"
           },
           "dateTo": {
             "type": "string",
+            "description": "Business trip ending date",
             "format": "date"
           },
           "totalCosts": {
             "type": "number",
+            "description": "Total costs",
             "format": "double",
             "nullable": true
           },
           "totalCostsWithCompanyPayments": {
             "type": "number",
+            "description": "Total costs of a business trip with company payments, e.g. with a company card",
             "format": "double",
             "nullable": true
           },
           "advancePaid": {
             "type": "number",
+            "description": "The value of the advance paid to the employee",
             "format": "double",
             "nullable": true
           },
@@ -1827,31 +1441,36 @@
             "$ref": "#/components/schemas/UserResultModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Business trips imte data"
       },
       "CompanyResultModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
+            "description": "Company ID",
             "format": "uuid"
           },
           "email": {
             "type": "string",
+            "description": "Company email",
             "nullable": true
           },
           "login": {
             "type": "string",
+            "description": "Company admin login",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Company data"
       },
       "CompanyCreateModel": {
         "required": [
-          "companyName",
           "language",
           "login",
+          "name",
           "password"
         ],
         "type": "object",
@@ -1859,49 +1478,64 @@
           "login": {
             "maxLength": 256,
             "minLength": 4,
-            "type": "string"
+            "type": "string",
+            "description": "Company admin login"
           },
           "password": {
             "maxLength": 100,
             "minLength": 8,
             "pattern": "^((?!.*?[<>])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])|(?!.*?[<>])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[^a-zA-Z0-9<>])|(?!.*?[<>])(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[^a-zA-Z0-9<>])|(?!.*?[<>])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^a-zA-Z0-9<>])).{8,}$",
-            "type": "string"
+            "type": "string",
+            "description": "Company admin password"
           },
           "language": {
             "maxLength": 2,
             "minLength": 2,
-            "type": "string"
+            "type": "string",
+            "description": "Company language code"
           },
           "email": {
             "maxLength": 256,
             "minLength": 3,
             "pattern": "^(?(\")(\".+?(?<!\\\\)\"@)|(([0-9a-z]((\\.(?!\\.))|[-!#\\$%&'\\*\\+/=\\?\\^`\\{\\}\\|~\\w])*)(?<=[0-9a-z])@))(?(\\[)(\\[(\\d{1,3}\\.){3}\\d{1,3}\\])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\\.)+[a-z0-9][\\-a-z0-9]{0,22}[a-z0-9]))$",
             "type": "string",
+            "description": "Company email",
             "nullable": true
           },
-          "companyName": {
+          "name": {
             "maxLength": 200,
             "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "description": "Company name"
           },
           "numberOfEmployees": {
             "type": "integer",
+            "description": "Number of employees; default = 5",
             "format": "int32"
           },
           "leaveModule": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is leave module availabe; default = true"
           },
           "delegationsModule": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is delegations module availabe; default = false"
           },
           "workTimeModule": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is worktime module availabe; default = false"
+          },
+          "personalFileModule": {
+            "type": "boolean",
+            "description": "Is personal file module availabe; default = false"
           },
           "employmentContract": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true - the only available form of contract is an employment contract, if false - other forms of contract are also available in the system; default = false"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Data to create a company"
       },
       "CompanyCreateModelApiCreateModel": {
         "type": "object",
@@ -1910,7 +1544,8 @@
             "$ref": "#/components/schemas/CompanyCreateModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "API request model to save provided data as new entities"
       },
       "ProblemDetails": {
         "type": "object",
@@ -1947,25 +1582,30 @@
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Department ID",
             "format": "int32"
           },
           "name": {
             "type": "string",
+            "description": "Department name",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Departments item data"
       },
       "IsWorkingDaySearchModel": {
         "type": "object",
         "properties": {
           "date": {
             "type": "string",
+            "description": "Date to check; default = Today",
             "format": "date",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Check working day data"
       },
       "IsWorkingDaySearchModelApiSearchModel": {
         "type": "object",
@@ -1974,7 +1614,8 @@
             "$ref": "#/components/schemas/IsWorkingDaySearchModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "API request model to perform simple operation on entities selected by the search data"
       },
       "ContractType": {
         "enum": [
@@ -1992,34 +1633,42 @@
         "properties": {
           "id": {
             "type": "string",
+            "description": "Employee user ID",
             "format": "uuid"
           },
           "email": {
             "type": "string",
+            "description": "Employee email",
             "nullable": true
           },
           "login": {
             "type": "string",
+            "description": "Employee login",
             "nullable": true
           },
           "pidentifier": {
             "type": "string",
+            "description": "Employee pidentifier",
             "nullable": true
           },
           "idNumber": {
             "type": "string",
+            "description": "Employee custom ID number",
             "nullable": true
           },
           "firstName": {
             "type": "string",
+            "description": "Employee first name",
             "nullable": true
           },
           "lastName": {
             "type": "string",
+            "description": "Employee last name",
             "nullable": true
           },
           "language": {
             "type": "string",
+            "description": "Employee language code",
             "nullable": true
           },
           "contractType": {
@@ -2027,61 +1676,75 @@
           },
           "organization": {
             "type": "string",
+            "description": "Employee organization name",
             "nullable": true
           },
           "departmentId": {
             "type": "integer",
+            "description": "Employee department ID",
             "format": "int32",
             "nullable": true
           },
           "managerId": {
             "type": "string",
+            "description": "Employee superior ID",
             "format": "uuid",
             "nullable": true
           },
           "isManager": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is employee a superior"
           },
           "needManager": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Does superior is required for the employee"
           },
           "position": {
             "type": "string",
+            "description": "Employee position",
             "nullable": true
           },
           "salaried": {
             "type": "boolean",
+            "description": "Is employee salaried",
             "nullable": true
           },
           "isActive": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is employee active"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Employee data"
       },
       "EmployeesFilterModel": {
         "type": "object",
         "properties": {
           "departmentId": {
             "type": "integer",
+            "description": "Get employees by the employee department ID",
             "format": "int32",
             "nullable": true
           },
           "managerId": {
             "type": "string",
+            "description": "Get employees by the superior ID",
             "format": "uuid",
             "nullable": true
           },
           "isManager": {
             "type": "boolean",
+            "description": "Get employees that are a superior or not",
             "nullable": true
           },
           "isActive": {
             "type": "boolean",
+            "description": "Get employees that are a active or not",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Employees filtering data"
       },
       "EmployeesFilterModelApiFilterModel": {
         "type": "object",
@@ -2090,7 +1753,8 @@
             "$ref": "#/components/schemas/EmployeesFilterModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "API request model to perform simple operation on entities filtered by the filter data"
       },
       "EmployeeCreateModel": {
         "required": [
@@ -2102,20 +1766,24 @@
         "properties": {
           "firstName": {
             "maxLength": 25,
-            "type": "string"
+            "type": "string",
+            "description": "Employee first name"
           },
           "lastName": {
             "maxLength": 50,
-            "type": "string"
+            "type": "string",
+            "description": "Employee last name"
           },
           "position": {
             "maxLength": 100,
             "minLength": 1,
             "type": "string",
+            "description": "Employee position",
             "nullable": true
           },
           "departmentId": {
             "type": "integer",
+            "description": "Employee department ID",
             "format": "int32",
             "nullable": true
           },
@@ -2123,45 +1791,54 @@
             "maxLength": 40,
             "minLength": 1,
             "type": "string",
+            "description": "Employee organization name",
             "nullable": true
           },
           "idNumber": {
             "maxLength": 50,
             "minLength": 1,
             "type": "string",
+            "description": "Employee custom ID number",
             "nullable": true
           },
           "language": {
             "maxLength": 2,
             "minLength": 2,
-            "type": "string"
+            "type": "string",
+            "description": "Employee language code"
           },
           "email": {
             "maxLength": 256,
             "minLength": 3,
             "pattern": "^(?(\")(\".+?(?<!\\\\)\"@)|(([0-9a-z]((\\.(?!\\.))|[-!#\\$%&'\\*\\+/=\\?\\^`\\{\\}\\|~\\w])*)(?<=[0-9a-z])@))(?(\\[)(\\[(\\d{1,3}\\.){3}\\d{1,3}\\])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\\.)+[a-z0-9][\\-a-z0-9]{0,22}[a-z0-9]))$",
             "type": "string",
+            "description": "Employee email",
             "nullable": true
           },
           "pidentifier": {
             "maxLength": 11,
             "minLength": 1,
             "type": "string",
+            "description": "Employee pidentifier",
             "nullable": true
           },
           "isManager": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is employee a superior"
           },
           "needManager": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Does superior is required for the employee"
           },
           "managerId": {
             "type": "string",
+            "description": "Employee superior ID",
             "format": "uuid",
             "nullable": true
           },
           "salaried": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is employee salaried"
           },
           "contractType": {
             "$ref": "#/components/schemas/ContractType"
@@ -2170,10 +1847,12 @@
             "maxLength": 250,
             "minLength": 1,
             "type": "string",
+            "description": "Comments",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Data to create an employee"
       },
       "EmployeeCreateModelApiCreateModel": {
         "type": "object",
@@ -2182,26 +1861,31 @@
             "$ref": "#/components/schemas/EmployeeCreateModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "API request model to save provided data as new entities"
       },
       "EmployeeSearchModel": {
         "type": "object",
         "properties": {
           "userId": {
             "type": "string",
+            "description": "Find employee by the employee user ID",
             "format": "uuid",
             "nullable": true
           },
           "login": {
             "type": "string",
+            "description": "Find employee by the employee login",
             "nullable": true
           },
           "idNumber": {
             "type": "string",
+            "description": "Find employee by the custom employee ID",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Find employee data; it's required to provide one of these values"
       },
       "EmployeeChangeModel": {
         "required": [
@@ -2213,20 +1897,24 @@
         "properties": {
           "firstName": {
             "maxLength": 25,
-            "type": "string"
+            "type": "string",
+            "description": "Employee first name"
           },
           "lastName": {
             "maxLength": 50,
-            "type": "string"
+            "type": "string",
+            "description": "Employee last name"
           },
           "position": {
             "maxLength": 100,
             "minLength": 1,
             "type": "string",
+            "description": "Employee position",
             "nullable": true
           },
           "departmentId": {
             "type": "integer",
+            "description": "Employee department ID",
             "format": "int32",
             "nullable": true
           },
@@ -2234,45 +1922,54 @@
             "maxLength": 40,
             "minLength": 1,
             "type": "string",
+            "description": "Employee organization name",
             "nullable": true
           },
           "idNumber": {
             "maxLength": 50,
             "minLength": 1,
             "type": "string",
+            "description": "Employee custom ID number",
             "nullable": true
           },
           "language": {
             "maxLength": 2,
             "minLength": 2,
-            "type": "string"
+            "type": "string",
+            "description": "Employee language code"
           },
           "email": {
             "maxLength": 256,
             "minLength": 3,
             "pattern": "^(?(\")(\".+?(?<!\\\\)\"@)|(([0-9a-z]((\\.(?!\\.))|[-!#\\$%&'\\*\\+/=\\?\\^`\\{\\}\\|~\\w])*)(?<=[0-9a-z])@))(?(\\[)(\\[(\\d{1,3}\\.){3}\\d{1,3}\\])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\\.)+[a-z0-9][\\-a-z0-9]{0,22}[a-z0-9]))$",
             "type": "string",
+            "description": "Employee email",
             "nullable": true
           },
           "pidentifier": {
             "maxLength": 11,
             "minLength": 1,
             "type": "string",
+            "description": "Employee pidentifier",
             "nullable": true
           },
           "isManager": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is employee a superior"
           },
           "needManager": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Does superior is required for the employee"
           },
           "managerId": {
             "type": "string",
+            "description": "Employee superior ID",
             "format": "uuid",
             "nullable": true
           },
           "salaried": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is employee salaried"
           },
           "contractType": {
             "$ref": "#/components/schemas/ContractType"
@@ -2281,10 +1978,12 @@
             "maxLength": 250,
             "minLength": 1,
             "type": "string",
+            "description": "Comments",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Data to change an employee"
       },
       "EmployeeSearchModelEmployeeChangeModelApiChangeModel": {
         "type": "object",
@@ -2296,38 +1995,55 @@
             "$ref": "#/components/schemas/EmployeeChangeModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "API request model to save provided data to entities selected by the search data"
+      },
+      "EmployeeSearchModelApiSearchModel": {
+        "type": "object",
+        "properties": {
+          "search": {
+            "$ref": "#/components/schemas/EmployeeSearchModel"
+          }
+        },
+        "additionalProperties": false,
+        "description": "API request model to perform simple operation on entities selected by the search data"
       },
       "AbsencesFilterModel": {
         "type": "object",
         "properties": {
           "userId": {
             "type": "string",
+            "description": "Get absences by the employee user ID",
             "format": "uuid",
             "nullable": true
           },
           "departmentId": {
             "type": "integer",
+            "description": "Get absences by the employee department ID",
             "format": "int32",
             "nullable": true
           },
           "organizationId": {
             "type": "integer",
+            "description": "Get absences by the employee organization ID",
             "format": "int32",
             "nullable": true
           },
           "dateFrom": {
             "type": "string",
+            "description": "Get absences that are later or equal to the date; default = Today",
             "format": "date",
             "nullable": true
           },
           "dateTo": {
             "type": "string",
+            "description": "Get absences that are earlier or equal to the date; default = Today",
             "format": "date",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Absences filtering data"
       },
       "AbsencesFilterModelApiFilterModel": {
         "type": "object",
@@ -2336,11 +2052,11 @@
             "$ref": "#/components/schemas/AbsencesFilterModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "API request model to perform simple operation on entities filtered by the filter data"
       },
       "HolidayType": {
         "enum": [
-          "NotSet",
           "Wypoczynkowy",
           "NaZadanie",
           "Okolicznosciowy",
@@ -2461,7 +2177,7 @@
           "DyzurWDomuCovid",
           "WolneObnizonyCzasPracy",
           "DostepnoscZdalna",
-          "Nothing"
+          "SwiadczenieRehabilitacyjne"
         ],
         "type": "string"
       },
@@ -2470,14 +2186,17 @@
         "properties": {
           "userId": {
             "type": "string",
+            "description": "Employee user ID",
             "format": "uuid"
           },
-          "startDate": {
+          "dateFrom": {
             "type": "string",
+            "description": "Absence beginning date",
             "format": "date"
           },
-          "endDate": {
+          "dateTo": {
             "type": "string",
+            "description": "Absence ending date",
             "format": "date"
           },
           "type": {
@@ -2485,33 +2204,28 @@
           },
           "title": {
             "type": "string",
+            "description": "Absence type title",
             "nullable": true
           },
           "user": {
             "$ref": "#/components/schemas/UserResultModel"
           }
         },
-        "additionalProperties": false
-      },
-      "EmployeeSearchModelApiSearchModel": {
-        "type": "object",
-        "properties": {
-          "search": {
-            "$ref": "#/components/schemas/EmployeeSearchModel"
-          }
-        },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Absences item data"
       },
       "StartWorkModel": {
         "type": "object",
         "properties": {
           "time": {
             "type": "string",
+            "description": "Worktime start time; default = Now",
             "format": "date-time",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Register worktime beginning data"
       },
       "EmployeeSearchModelStartWorkModelApiChangeModel": {
         "type": "object",
@@ -2523,13 +2237,15 @@
             "$ref": "#/components/schemas/StartWorkModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "API request model to save provided data to entities selected by the search data"
       },
       "EndWorkModel": {
         "type": "object",
         "properties": {
           "time": {
             "type": "string",
+            "description": "Worktime end time; default = Now",
             "format": "date-time",
             "nullable": true
           },
@@ -2537,11 +2253,13 @@
             "maximum": 720,
             "minimum": 0,
             "type": "integer",
+            "description": "In worktime break in minutes",
             "format": "int32",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Register worktime ending data"
       },
       "EmployeeSearchModelEndWorkModelApiChangeModel": {
         "type": "object",
@@ -2553,38 +2271,45 @@
             "$ref": "#/components/schemas/EndWorkModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "API request model to save provided data to entities selected by the search data"
       },
       "ICalsFilterModel": {
         "type": "object",
         "properties": {
           "userId": {
             "type": "string",
+            "description": "Get events by the employee user ID",
             "format": "uuid",
             "nullable": true
           },
           "departmentId": {
             "type": "integer",
+            "description": "Get events by the employee department ID",
             "format": "int32",
             "nullable": true
           },
           "organizationId": {
             "type": "integer",
+            "description": "Get events by the employee organization ID",
             "format": "int32",
             "nullable": true
           },
           "dateFrom": {
             "type": "string",
+            "description": "Get events that are later or equal to the date; default = Today",
             "format": "date",
             "nullable": true
           },
           "dateTo": {
             "type": "string",
+            "description": "Get events that are earlier or equal to the date; default = Today",
             "format": "date",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "iCal events filtering data"
       },
       "ICalsFilterModelApiFilterModel": {
         "type": "object",
@@ -2593,38 +2318,45 @@
             "$ref": "#/components/schemas/ICalsFilterModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "API request model to perform simple operation on entities filtered by the filter data"
       },
       "RealworksFilterModel": {
         "type": "object",
         "properties": {
           "userId": {
             "type": "string",
+            "description": "Get registerd worktimes by the employee user ID",
             "format": "uuid",
             "nullable": true
           },
           "departmentId": {
             "type": "integer",
+            "description": "Get registerd worktimes by the employee department ID",
             "format": "int32",
             "nullable": true
           },
           "organizationId": {
             "type": "integer",
+            "description": "Get registerd worktimes by the employee organization ID",
             "format": "int32",
             "nullable": true
           },
           "dateFrom": {
             "type": "string",
+            "description": "Get registerd worktimes that are later or equal to the date; default = Today",
             "format": "date",
             "nullable": true
           },
           "dateTo": {
             "type": "string",
+            "description": "Get registerd worktimes that are earlier or equal to the date; default = Today",
             "format": "date",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Registerd worktimes filtering data"
       },
       "RealworksFilterModelApiFilterModel": {
         "type": "object",
@@ -2633,40 +2365,48 @@
             "$ref": "#/components/schemas/RealworksFilterModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "API request model to perform simple operation on entities filtered by the filter data"
       },
       "RealworkResultModel": {
         "type": "object",
         "properties": {
           "userId": {
             "type": "string",
+            "description": "Employee user ID",
             "format": "uuid"
           },
           "timeFrom": {
             "type": "string",
+            "description": "Registerd worktime beginning date and time",
             "format": "date-time"
           },
           "timeTo": {
             "type": "string",
+            "description": "Registerd worktime ending date and time",
             "format": "date-time"
           },
           "comment": {
             "type": "string",
+            "description": "Registerd worktime comment",
             "nullable": true
           },
           "timeFromIp": {
             "type": "string",
+            "description": "Registerd start-worktime IP address",
             "nullable": true
           },
           "timeToIp": {
             "type": "string",
+            "description": "Registerd stop-worktime IP address",
             "nullable": true
           },
           "user": {
             "$ref": "#/components/schemas/UserResultModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Registerd worktime data"
       },
       "RequestStatus": {
         "enum": [
@@ -2784,31 +2524,37 @@
         "properties": {
           "userId": {
             "type": "string",
+            "description": "Get requests by the employee user ID",
             "format": "uuid",
             "nullable": true
           },
           "departmentId": {
             "type": "integer",
+            "description": "Get requests by the employee department ID",
             "format": "int32",
             "nullable": true
           },
           "organizationId": {
             "type": "integer",
+            "description": "Get requests by the employee organization ID",
             "format": "int32",
             "nullable": true
           },
           "dateFrom": {
             "type": "string",
+            "description": "Get requests that are later or equal to the date; default = Today",
             "format": "date-time",
             "nullable": true
           },
           "dateTo": {
             "type": "string",
+            "description": "Get requests that are earlier or equal to the date; default = Today",
             "format": "date-time",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Requests filtering data"
       },
       "RequestsFilterModelApiFilterModel": {
         "type": "object",
@@ -2817,25 +2563,30 @@
             "$ref": "#/components/schemas/RequestsFilterModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "API request model to perform simple operation on entities filtered by the filter data"
       },
       "RequestsResultModel": {
         "type": "object",
         "properties": {
           "number": {
             "type": "integer",
+            "description": "Request number",
             "format": "int32"
           },
           "userId": {
             "type": "string",
+            "description": "Employee user ID",
             "format": "uuid"
           },
-          "startDate": {
+          "dateFrom": {
             "type": "string",
+            "description": "Request beginning date",
             "format": "date"
           },
-          "endDate": {
+          "dateTo": {
             "type": "string",
+            "description": "Request ending date",
             "format": "date"
           },
           "status": {
@@ -2846,59 +2597,48 @@
           },
           "title": {
             "type": "string",
+            "description": "Request type title",
             "nullable": true
           },
           "totalHours": {
             "type": "number",
+            "description": "Request time in hours",
             "format": "double"
           },
           "user": {
             "$ref": "#/components/schemas/UserResultModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Request item data"
       },
       "AvailableTypesResultModel": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Request type ID",
             "format": "int32"
-          },
-          "isHrsLimit": {
-            "type": "boolean"
-          },
-          "limitType": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "isMonthLimit": {
-            "type": "boolean"
           },
           "employment": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is available to employees working under an employment contract"
           },
           "otherContract": {
-            "type": "boolean"
-          },
-          "onlyForHr": {
-            "type": "boolean"
-          },
-          "skipWorkflow": {
-            "type": "boolean"
-          },
-          "skipManagerNotification": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is available for other co-workers (B2B, other contracts)"
           },
           "type": {
             "$ref": "#/components/schemas/HolidayType"
           },
           "title": {
             "type": "string",
+            "description": "Request type title",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Available request type data"
       },
       "TimetableItemsSearchModel": {
         "required": [
@@ -2908,41 +2648,49 @@
         "properties": {
           "timetableId": {
             "type": "integer",
+            "description": "Find items of the specified timetable ID",
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Timetable items search data"
       },
       "TimetableItemsFilterModel": {
         "type": "object",
         "properties": {
           "userId": {
             "type": "string",
+            "description": "Get timetable items by the employee user ID",
             "format": "uuid",
             "nullable": true
           },
           "departmentId": {
             "type": "integer",
+            "description": "Get timetable items by the employee department ID",
             "format": "int32",
             "nullable": true
           },
           "organizationId": {
             "type": "integer",
+            "description": "Get timetable items by the employee organization ID",
             "format": "int32",
             "nullable": true
           },
           "dateFrom": {
             "type": "string",
+            "description": "Get timetable items that are later or equal to the date",
             "format": "date",
             "nullable": true
           },
           "dateTo": {
             "type": "string",
+            "description": "Get timetable items that are earlier or equal to the date",
             "format": "date",
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Timetable items filtering data"
       },
       "TimetableItemsSearchModelTimetableItemsFilterModelApiFindModel": {
         "type": "object",
@@ -2954,43 +2702,48 @@
             "$ref": "#/components/schemas/TimetableItemsFilterModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "API request model to search for entity and return its filtered children"
       },
       "TimetableItemsResultModel": {
         "type": "object",
         "properties": {
           "userId": {
             "type": "string",
+            "description": "Employee user ID",
             "format": "uuid"
           },
           "timeFrom": {
             "type": "string",
+            "description": "Timetable item beginning date and time",
             "format": "date-time"
           },
           "timeTo": {
             "type": "string",
+            "description": "Timetable item ending date and time",
             "format": "date-time"
           },
           "comment": {
             "type": "string",
+            "description": "Timetable item comment",
             "nullable": true
           },
           "breakMinutes": {
             "type": "integer",
+            "description": "Timetable item break time in minutes",
             "format": "int32"
           },
           "user": {
             "$ref": "#/components/schemas/UserResultModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Timetable item data"
       },
       "WorktimeMode": {
         "enum": [
-          "NotSet",
           "Basic",
-          "Equivalent",
-          "Nothing"
+          "Equivalent"
         ],
         "type": "string"
       },
@@ -3026,31 +2779,38 @@
         "properties": {
           "userId": {
             "type": "string",
+            "description": "Timetable item employee user ID",
             "format": "uuid"
           },
           "timeFrom": {
             "type": "string",
+            "description": "Timetable item beginning date and time",
             "format": "date-time"
           },
           "timeTo": {
             "type": "string",
+            "description": "Timetable item ending date and time",
             "format": "date-time"
           },
           "comment": {
             "maxLength": 250,
-            "type": "string"
+            "type": "string",
+            "description": "Timetable item comment"
           },
           "breakMinutes": {
             "maximum": 720,
             "minimum": 0,
             "type": "integer",
+            "description": "Timetable item break time in minutes",
             "format": "int32"
           },
           "commentOnly": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Is the item a comment only?"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Timetable item data"
       },
       "TimetableCreateModel": {
         "required": [
@@ -3065,19 +2825,23 @@
         "properties": {
           "title": {
             "maxLength": 250,
-            "type": "string"
+            "type": "string",
+            "description": "Timetable title"
           },
           "description": {
             "maxLength": 250,
             "type": "string",
+            "description": "Timetable description",
             "nullable": true
           },
           "dateFrom": {
             "type": "string",
+            "description": "Timetable beginning date",
             "format": "date"
           },
           "dateTo": {
             "type": "string",
+            "description": "Timetable ending date",
             "format": "date"
           },
           "mode": {
@@ -3090,10 +2854,12 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/TimetableItem"
-            }
+            },
+            "description": "Timetable items collection"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Data to create a timetable"
       },
       "TimetableCreateModelApiCreateModel": {
         "type": "object",
@@ -3102,8 +2868,21 @@
             "$ref": "#/components/schemas/TimetableCreateModel"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "API request model to save provided data as new entities"
+      }
+    },
+    "securitySchemes": {
+      "http": {
+        "type": "http",
+        "description": "Basic",
+        "scheme": "basic"
       }
     }
-  }
+  },
+  "security": [
+    {
+      "http": []
+    }
+  ]
 }
